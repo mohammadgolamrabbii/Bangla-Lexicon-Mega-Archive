@@ -52,8 +52,20 @@ if (wlLines.length !== wlSet.size) {
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 for (const m of manifest) {
-  if (!fs.existsSync(path.join(DIST_DIR, 'chunks', m.file))) {
+  const cf = path.join(DIST_DIR, 'chunks', m.file);
+  if (!fs.existsSync(cf)) {
     console.error(`❌ Missing chunk file: ${m.file}`);
+    errors++;
+  } else if (fs.statSync(cf).size >= 45 * 1024 * 1024) {
+    console.error(`❌ Chunk exceeds 45MB: ${m.file}`);
+    errors++;
+  }
+}
+
+for (const fn of ['bangla_lexicon_rich.jsonl', 'bangla_lexicon_rich.json', 'bangla_lexicon_core.csv', 'bangla_wordlist_verified.txt', 'bn_BD.dic']) {
+  const sz = fs.statSync(path.join(DIST_DIR, fn)).size;
+  if (sz >= 45 * 1024 * 1024) {
+    console.error(`❌ Dist file exceeds 45MB: ${fn} (${(sz / 1048576).toFixed(2)} MB)`);
     errors++;
   }
 }

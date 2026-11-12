@@ -158,15 +158,62 @@ if (fs.existsSync(bdJsonPath)) {
   }
 }
 
-console.log('5. Merging & normalizing massive Bangla WordLists (439k + 112k + 48k + 40k)...');
+console.log('5. Merging Wikimedia Bangla Wiktionary (72k+ POS & Defs) & English Wiktionary Lemmas...');
+const bnWiktPath = path.join(RAW_DIR, 'wikimedia/bnwiktionary_parsed.jsonl');
+if (fs.existsSync(bnWiktPath)) {
+  const lines = fs.readFileSync(bnWiktPath, 'utf8').split('\n');
+  for (const line of lines) {
+    if (!line.trim()) continue;
+    try {
+      const obj = JSON.parse(line);
+      const w = cleanBanglaWord(obj.word);
+      if (!w) continue;
+      const entry = getOrCreateEntry(w);
+      if (Array.isArray(obj.pos)) for (const p of obj.pos) entry.pos.add(p);
+      if (Array.isArray(obj.defs)) for (const d of obj.defs) if (d) entry.defs.add(toBanglaCanonical(d));
+      if (Array.isArray(obj.synonyms)) for (const s of obj.synonyms) {
+        const cs = cleanBanglaWord(s);
+        if (cs && cs !== w) entry.synonyms.add(cs);
+      }
+      entry.sources.add('bn.wiktionary');
+      if (isPureSingleBanglaToken(w)) pureWordSet.add(w);
+    } catch {}
+  }
+}
+
+const enWiktPath = path.join(RAW_DIR, 'wikimedia/enwiktionary_lemmas.jsonl');
+if (fs.existsSync(enWiktPath)) {
+  const lines = fs.readFileSync(enWiktPath, 'utf8').split('\n');
+  for (const line of lines) {
+    if (!line.trim()) continue;
+    try {
+      const obj = JSON.parse(line);
+      const w = cleanBanglaWord(obj.word);
+      if (!w) continue;
+      const entry = getOrCreateEntry(w);
+      if (Array.isArray(obj.pos)) for (const p of obj.pos) entry.pos.add(p);
+      if (obj.romanised) entry.romanised.add(obj.romanised.trim());
+      if (Array.isArray(obj.en)) for (const g of obj.en) if (g) entry.en.add(g.trim());
+      if (Array.isArray(obj.synonyms)) for (const s of obj.synonyms) {
+        const cs = cleanBanglaWord(s);
+        if (cs && cs !== w) entry.synonyms.add(cs);
+      }
+      entry.sources.add('en.wiktionary');
+      if (isPureSingleBanglaToken(w)) pureWordSet.add(w);
+    } catch {}
+  }
+}
+
+console.log('6. Merging & normalizing massive Bangla WordLists (439k + 112k + 48k + 40k + bnwiki)...');
 const wordlists = [
-  'BengaliWordList_439.txt',
-  'BengaliWordList_112.txt',
-  'BengaliWordList_48.txt',
-  'BengaliWordList_40.txt'
+  'BengaliDictionary/BengaliWordList_439.txt',
+  'BengaliDictionary/BengaliWordList_112.txt',
+  'BengaliDictionary/BengaliWordList_48.txt',
+  'BengaliDictionary/BengaliWordList_40.txt',
+  'wikimedia/bnwiki_clean_tokens.txt'
 ];
 for (const wl of wordlists) {
-  const p = path.join(RAW_DIR, 'BengaliDictionary', wl);
+  const p = path.join(RAW_DIR, wl);
   if (!fs.existsSync(p)) continue;
   const lines = fs.readFileSync(p, 'utf8').split('\n');
   for (const line of lines) {
@@ -206,10 +253,10 @@ fs.writeFileSync(
   'utf8'
 );
 
-// Export 2: Rich JSON Core
+// Export 2: Rich JSON Core (compact so file stays well under GitHub 50MB limit)
 fs.writeFileSync(
   path.join(DIST_DIR, 'bangla_lexicon_rich.json'),
-  JSON.stringify(richEntries, null, 2),
+  JSON.stringify(richEntries),
   'utf8'
 );
 
@@ -263,6 +310,7 @@ const stats = {
   rich_entries: richEntries.length,
   total_verified_words: allSortedWords.length,
   with_pos: richEntries.filter(e => e.pos.length > 0).length,
+  with_definitions: richEntries.filter(e => e.def.length > 0).length,
   with_romanised: richEntries.filter(e => e.romanised.length > 0).length,
   with_synonyms: richEntries.filter(e => e.synonyms.length > 0).length,
   chunk_files: chunkManifest.length,

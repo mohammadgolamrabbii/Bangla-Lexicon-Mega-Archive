@@ -3,91 +3,91 @@
     "char": "অ",
     "code": "985",
     "file": "bn_985.json",
-    "count": 5209
+    "count": 9458
   },
   {
     "char": "আ",
     "code": "986",
     "file": "bn_986.json",
-    "count": 2945
+    "count": 7835
   },
   {
     "char": "ই",
     "code": "987",
     "file": "bn_987.json",
-    "count": 831
+    "count": 1584
   },
   {
     "char": "ঈ",
     "code": "988",
     "file": "bn_988.json",
-    "count": 51
+    "count": 153
   },
   {
     "char": "উ",
     "code": "989",
     "file": "bn_989.json",
-    "count": 1659
+    "count": 2808
   },
   {
     "char": "ঊ",
     "code": "98a",
     "file": "bn_98a.json",
-    "count": 43
+    "count": 275
   },
   {
     "char": "ঋ",
     "code": "98b",
     "file": "bn_98b.json",
-    "count": 49
+    "count": 116
   },
   {
     "char": "এ",
     "code": "98f",
     "file": "bn_98f.json",
-    "count": 1338
+    "count": 2571
   },
   {
     "char": "ঐ",
     "code": "990",
     "file": "bn_990.json",
-    "count": 63
+    "count": 132
   },
   {
     "char": "ও",
     "code": "993",
     "file": "bn_993.json",
-    "count": 396
+    "count": 572
   },
   {
     "char": "ঔ",
     "code": "994",
     "file": "bn_994.json",
-    "count": 57
+    "count": 115
   },
   {
     "char": "ক",
     "code": "995",
     "file": "bn_995.json",
-    "count": 4763
+    "count": 8843
   },
   {
     "char": "খ",
     "code": "996",
     "file": "bn_996.json",
-    "count": 899
+    "count": 1742
   },
   {
     "char": "গ",
     "code": "997",
     "file": "bn_997.json",
-    "count": 1990
+    "count": 3707
   },
   {
     "char": "ঘ",
     "code": "998",
     "file": "bn_998.json",
-    "count": 498
+    "count": 1111
   },
   {
     "char": "ঙ",
@@ -99,49 +99,49 @@
     "char": "চ",
     "code": "99a",
     "file": "bn_99a.json",
-    "count": 1569
+    "count": 3259
   },
   {
     "char": "ছ",
     "code": "99b",
     "file": "bn_99b.json",
-    "count": 539
+    "count": 1177
   },
   {
     "char": "জ",
     "code": "99c",
     "file": "bn_99c.json",
-    "count": 1965
+    "count": 3209
   },
   {
     "char": "ঝ",
     "code": "99d",
     "file": "bn_99d.json",
-    "count": 241
+    "count": 499
   },
   {
     "char": "ঞ",
     "code": "99e",
     "file": "bn_99e.json",
-    "count": 1
+    "count": 10
   },
   {
     "char": "ট",
     "code": "99f",
     "file": "bn_99f.json",
-    "count": 840
+    "count": 1217
   },
   {
     "char": "ঠ",
     "code": "9a0",
     "file": "bn_9a0.json",
-    "count": 156
+    "count": 281
   },
   {
     "char": "ড",
     "code": "9a1",
     "file": "bn_9a1.json",
-    "count": 731
+    "count": 994
   },
   {
     "char": "ড়",
@@ -153,7 +153,7 @@
     "char": "ঢ",
     "code": "9a2",
     "file": "bn_9a2.json",
-    "count": 133
+    "count": 318
   },
   {
     "char": "ঢ়",
@@ -165,13 +165,13 @@
     "char": "ণ",
     "code": "9a3",
     "file": "bn_9a3.json",
-    "count": 4
+    "count": 26
   },
   {
     "char": "ত",
     "code": "9a4",
     "file": "bn_9a4.json",
-    "count": 1655
+    "count": 3515
   },
   {
     "char": "ৎ",
@@ -183,102 +183,102 @@
     "char": "থ",
     "code": "9a5",
     "file": "bn_9a5.json",
-    "count": 189
+    "count": 312
   },
   {
     "char": "দ",
     "code": "9a6",
     "file": "bn_9a6.json",
-    "count": 2190
+    "count": 4194
   },
   {
     "char": "ধ",
     "code": "9a7",
     "file": "bn_9a7.json",
-    "count": 641
+    "count": 1285
   },
   {
     "char": "ন",
     "code": "9a8",
     "file": "bn_9a8.json",
-    "count": 2821
+    "count": 4964
   },
   {
     "char": "প",
     "code": "9aa",
     "file": "bn_9aa.json",
-    "count": 6382
+    "count": 10109
   },
   {
     "char": "ফ",
     "code": "9ab",
     "file": "bn_9ab.json",
-    "count": 954
+    "count": 1360
   },
   {
     "char": "ব",
     "code": "9ac",
     "file": "bn_9ac.json",
-    "count": 5928
+    "count": 10165
   },
   {
     "char": "ভ",
     "code": "9ad",
     "file": "bn_9ad.json",
-    "count": 1484
+    "count": 2639
   },
   {
     "char": "ম",
     "code": "9ae",
     "file": "bn_9ae.json",
-    "count": 3883
+    "count": 6400
   },
   {
     "char": "য",
     "code": "9af",
     "file": "bn_9af.json",
-    "count": 898
+    "count": 1619
   },
   {
     "char": "য়",
     "code": "9df",
     "file": "bn_9df.json",
-    "count": 9
+    "count": 10
   },
   {
     "char": "র",
     "code": "9b0",
     "file": "bn_9b0.json",
-    "count": 1733
+    "count": 2900
   },
   {
     "char": "ল",
     "code": "9b2",
     "file": "bn_9b2.json",
-    "count": 1099
+    "count": 1750
   },
   {
     "char": "শ",
     "code": "9b6",
     "file": "bn_9b6.json",
-    "count": 1804
+    "count": 3229
   },
   {
     "char": "ষ",
     "code": "9b7",
     "file": "bn_9b7.json",
-    "count": 70
+    "count": 285
   },
   {
     "char": "স",
     "code": "9b8",
     "file": "bn_9b8.json",
-    "count": 6354
+    "count": 10378
   },
   {
     "char": "হ",
     "code": "9b9",
     "file": "bn_9b9.json",
-    "count": 1607
+    "count": 2496
   }
 ]
