@@ -1,0 +1,13 @@
+{
+  "language": "Bangla (বাংলা)",
+  "iso_639_1": "bn",
+  "rich_entries": 66679,
+  "total_verified_words": 495209,
+  "with_pos": 14124,
+  "with_romanised": 15078,
+  "with_synonyms": 10053,
+  "chunk_files": 47,
+  "unicode_normalization": "NFC",
+  "license": "GPL-3.0",
+  "generated_at": "2026-11-12T06:49:20.800Z"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bangla Open Lexicon Entry",
+  "type": "object",
+  "required": ["id", "word", "pos", "en", "sources"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^bn-[0-9]{6}$" },
+    "word": { "type": "string", "minLength": 1 },
+    "pos": { "type": "array", "items": { "type": "string" } },
+    "romanised": { "type": "array", "items": { "type": "string" } },
+    "en": { "type": "array", "items": { "type": "string" } },
+    "def": { "type": "array", "items": { "type": "string" } },
+    "synonyms": { "type": "array", "items": { "type": "string" } },
+    "examples": { "type": "array", "items": { "type": "string" } },
+    "sources": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+  }
+}
